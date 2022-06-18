@@ -3,18 +3,17 @@ import { Text } from '@app/components/Text';
 import type { Theme } from '@emotion/react';
 import type { RectButtonProps } from 'react-native-gesture-handler';
 import { RectButton } from 'react-native-gesture-handler';
-import { colors } from '@app/theme/colors';
 import { Platform } from 'react-native';
 import BaseIcon from '@app/components/Icon';
 
 export const variants = {
   primary: (theme: Theme) => css`
-    background-color: ${theme.colors.ivy};
+    background-color: ${theme.colors.indigo};
   `,
   outline: (theme: Theme) => css`
     background-color: transparent;
     border-width: 1px;
-    border-color: ${theme.colors.ivy};
+    border-color: ${theme.colors.indigo};
   `,
 };
 
@@ -32,7 +31,7 @@ export const pressableDefaultProps: Record<
   },
   outline: {
     rippleColor: 'rgba(107, 77, 255, 0.4)',
-    underlayColor: colors.ivy,
+    underlayColor: 'rgb(107, 77, 255)',
     activeOpacity: 0.4,
   },
 };
@@ -52,10 +51,6 @@ export const Inner = styled.View`
 
 export const Title = styled(Text)``;
 
-Title.defaultProps = {
-  variant: 'button',
-};
-
 export const Pressable = styled(RectButton)`
   flex-grow: 1;
 `;
@@ -63,7 +58,7 @@ export const Pressable = styled(RectButton)`
 export const Loader = styled.ActivityIndicator``;
 
 Loader.defaultProps = {
-  color: colors.white70,
+  color: 'rgba(255, 255, 255, 0.7)',
   size: Platform.select({ android: 'large', default: 'small' }),
 };
 

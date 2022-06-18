@@ -25,7 +25,7 @@ export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
     <Presable onPress={handlePress}>
       <Icon
         name={iconMap[name as TabScreenName]}
-        color={focused ? 'ivy' : 'mediumWhite'}
+        color={focused ? 'indigo' : 'white70'}
         filled={focused}
       />
       <Label focused={focused}>{name}</Label>

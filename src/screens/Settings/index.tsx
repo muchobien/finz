@@ -4,6 +4,8 @@ import { Container } from './styles';
 
 export const Settings: Screen<'Settings'> = () => (
   <Container>
-    <Text>Settings</Text>
+    <Text font="largeTitle" weight="600">
+      Settings
+    </Text>
   </Container>
 );

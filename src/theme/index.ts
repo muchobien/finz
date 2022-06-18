@@ -1,25 +1,36 @@
 import type { Theme as NavigationTheme } from '@react-navigation/native';
+import type { ColorSchemeName } from 'react-native';
 import { Dimensions, Platform } from 'react-native';
 import type { EdgeInsets } from 'react-native-safe-area-context';
-import { colors } from './colors';
+import type { Colors } from './colors';
+import { darkColors, lightColors } from './colors';
 
-export const navigationTheme: NavigationTheme = {
+const darkNavigation: NavigationTheme = {
   dark: true,
   colors: {
-    background: colors.black,
-    primary: colors.ivy,
-    border: colors.gray,
-    card: colors.black,
-    notification: colors.ivy,
-    text: colors.white,
+    background: darkColors.black,
+    primary: darkColors.indigo,
+    border: darkColors.gray,
+    card: darkColors.black,
+    notification: darkColors.indigo,
+    text: darkColors.white,
   },
 };
 
-export const theme = {
-  colors,
+const lightNavigation: NavigationTheme = {
+  dark: false,
+  colors: {
+    background: lightColors.white,
+    primary: lightColors.indigo,
+    border: lightColors.gray,
+    card: lightColors.white,
+    notification: lightColors.indigo,
+    text: lightColors.black,
+  },
 };
 
-export type AppTheme = typeof theme & {
+export type AppTheme = {
+  colors: Colors;
   device: {
     insets: EdgeInsets;
     width: number;
@@ -29,16 +40,22 @@ export type AppTheme = typeof theme & {
 
 const { width, height } = Dimensions.get('window');
 
-export const buildTheme = (insets: EdgeInsets): AppTheme => ({
-  colors,
-  device: {
-    insets: {
-      ...insets,
-      bottom: insets.bottom + Platform.select({ ios: 0, default: 20 }),
+export const buildTheme = (
+  insets: EdgeInsets,
+  scheme: ColorSchemeName,
+): { theme: AppTheme; navigationTheme: NavigationTheme } => ({
+  theme: {
+    colors: scheme === 'light' ? lightColors : darkColors,
+    device: {
+      insets: {
+        ...insets,
+        bottom: insets.bottom + Platform.select({ ios: 0, default: 20 }),
+      },
+      width,
+      height,
     },
-    width,
-    height,
   },
+  navigationTheme: scheme === 'light' ? darkNavigation : lightNavigation,
 });
 
 export { width, height };

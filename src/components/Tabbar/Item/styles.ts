@@ -20,10 +20,10 @@ Presable.defaultProps = {
 
 export const Label = styled(Text)<{ focused: boolean }>`
   color: ${({ focused, theme }) =>
-    focused ? theme.colors.ivy : theme.colors.mediumWhite};
+    focused ? theme.colors.indigo : theme.colors.white70};
   margin-top: 2px;
 `;
 
 Label.defaultProps = {
-  variant: 'overline',
+  font: 'footnote',
 };
