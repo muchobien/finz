@@ -12,7 +12,9 @@ export type ItemProps = {
 };
 
 const iconMap: Record<TabScreenName, IconName> = {
-  Home: 'home',
+  Transactions: 'receipt',
+  Assets: 'briefcase',
+  Analytics: 'chartColumn',
   Settings: 'gear',
 };
 
