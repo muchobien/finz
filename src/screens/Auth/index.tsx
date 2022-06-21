@@ -1,9 +1,13 @@
 import type { Screen } from '@app/types';
-import { Text } from '@app/components';
+import { Button, Text } from '@app/components';
 import { Container } from './styles';
+import { store } from '@app/services';
 
 export const Auth: Screen<'Auth'> = () => (
   <Container>
-    <Text>Auth</Text>
+    <Text font="largeTitle" weight="600">
+      Auth
+    </Text>
+    <Button title="Authenticate" onPress={() => store.set('@logged', true)} />
   </Container>
 );

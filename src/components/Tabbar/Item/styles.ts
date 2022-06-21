@@ -6,7 +6,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 export const Presable = styled(BorderlessButton)(({ theme }) => ({
   paddingBottom: Platform.select({
     ios: theme.device.insets.bottom,
-    android: theme.device.insets.bottom + 16,
+    android: theme.device.insets.bottom,
   }),
   marginTop: 16,
   flexGrow: 1,

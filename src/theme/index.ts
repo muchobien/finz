@@ -4,6 +4,8 @@ import { Dimensions, Platform } from 'react-native';
 import type { EdgeInsets } from 'react-native-safe-area-context';
 import type { Colors } from './colors';
 import { darkColors, lightColors } from './colors';
+import type { Scale } from './spacing';
+import { scale } from './spacing';
 
 const darkNavigation: NavigationTheme = {
   dark: true,
@@ -31,6 +33,7 @@ const lightNavigation: NavigationTheme = {
 
 export type AppTheme = {
   colors: Colors;
+  scale: Scale;
   device: {
     insets: EdgeInsets;
     width: number;
@@ -45,11 +48,13 @@ export const buildTheme = (
   scheme: ColorSchemeName,
 ): { theme: AppTheme; navigationTheme: NavigationTheme } => ({
   theme: {
+    scale,
     colors: scheme === 'light' ? lightColors : darkColors,
     device: {
       insets: {
         ...insets,
-        bottom: insets.bottom + Platform.select({ ios: 0, default: 20 }),
+        bottom:
+          insets.bottom + Platform.select({ ios: 0, default: scale.medium }),
       },
       width,
       height,

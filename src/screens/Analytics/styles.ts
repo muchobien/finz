@@ -1,7 +1,7 @@
-import { SafeView } from '@app/components';
+import { View } from '@app/components';
 import styled from '@emotion/native';
 
-export const Container = styled(SafeView)`
-  padding-horizontal: 16px;
-  padding-top: 16px;
-`;
+export const Container = styled(View.Safe)(({ theme }) => ({
+  paddingHorizontal: theme.scale.medium,
+  paddingTop: theme.scale.medium,
+}));

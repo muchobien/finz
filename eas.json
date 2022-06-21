@@ -3,7 +3,13 @@
     "version": ">= 0.54.1"
   },
   "build": {
-    "development": {
+    "base": {
+      "android": {
+        "image": "ubuntu-18.04-jdk-11-ndk-r19c"
+      }
+    },
+    "simulator": {
+      "extends": "base",
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
@@ -13,7 +19,13 @@
         "buildType": "apk"
       }
     },
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal"
+    },
     "preview": {
+      "extends": "base",
       "distribution": "internal"
     },
     "production": {}
