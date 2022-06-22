@@ -1,7 +1,9 @@
 import type { Theme as NavigationTheme } from '@react-navigation/native';
 import type { ColorSchemeName } from 'react-native';
 import { Dimensions, Platform } from 'react-native';
+import { createStyleBuilder } from 'react-native-zephyr';
 import type { EdgeInsets } from 'react-native-safe-area-context';
+import { initialWindowMetrics } from 'react-native-safe-area-context';
 import type { Colors } from './colors';
 import { darkColors, lightColors } from './colors';
 import type { Scale } from './spacing';
@@ -64,3 +66,21 @@ export const buildTheme = (
 });
 
 export { width, height };
+
+export const { styles, useStyles, makeStyledComponent } = createStyleBuilder({
+  baseFontSize: 16,
+  extraHandlers: {
+    safe: (value: 'top' | 'bottom' | 'y') => {
+      const { insets } = initialWindowMetrics ?? {
+        insets: { top: 0, bottom: 0 },
+      };
+
+      return {
+        paddingTop: ['top', 'y'].includes(value) ? insets.top : 0,
+        paddingBottom: ['bottom', 'y'].includes(value)
+          ? insets.bottom + Platform.select({ ios: 0, default: 16 })
+          : 0,
+      };
+    },
+  },
+});

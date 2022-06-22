@@ -1,8 +1,7 @@
-import { withTheme } from '@emotion/react';
 import Svg, { Path } from 'react-native-svg';
 import type { InnerIconProps } from './types';
 
-export const Google = withTheme(({ size = 24, ...props }: InnerIconProps) => (
+export const Google = ({ size = 24, ...props }: InnerIconProps) => (
   <Svg width={size} height={size} fill="none" viewBox="0 0 24 24" {...props}>
     <Path
       fill="#4285F4"
@@ -25,4 +24,4 @@ export const Google = withTheme(({ size = 24, ...props }: InnerIconProps) => (
       transform="translate(27.009 -39.239)"
     />
   </Svg>
-));
+);

@@ -1,14 +1,24 @@
 import { useTabbar } from '@app/hooks';
+import { Styled } from '@app/components/styled';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { memo } from 'react';
 import { Item } from './Item';
-import { Container } from './styles';
 
 export const Tabbar = memo(({ state, navigation }: BottomTabBarProps) => {
   const { updateHeight } = useTabbar();
 
   return (
-    <Container onLayout={updateHeight}>
+    <Styled.BlurView
+      classes={[
+        'flex:row',
+        'overflow:hidden',
+        'rounded:2xl',
+        'absolute',
+        'bottom:0',
+      ]}
+      tint="dark"
+      intensity={80}
+      onLayout={updateHeight}>
       {state.routes.map((route, index) => (
         <Item
           key={route.key}
@@ -17,6 +27,6 @@ export const Tabbar = memo(({ state, navigation }: BottomTabBarProps) => {
           navigation={navigation}
         />
       ))}
-    </Container>
+    </Styled.BlurView>
   );
 });

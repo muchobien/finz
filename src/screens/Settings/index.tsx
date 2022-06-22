@@ -1,7 +1,5 @@
 import type { Screen } from '@app/types';
-import { Spacer, Text } from '@app/components';
-import { Container } from './styles';
-import { SectionList } from 'react-native';
+import { Styled } from '@app/components';
 import { useConnect } from './connect';
 import { Button } from './components';
 
@@ -26,16 +24,28 @@ const DATA = [
 export const Settings: Screen<'Settings'> = () => {
   const { contentContainerStyle } = useConnect();
   return (
-    <Container mode="margin">
-      <Text font="largeTitle" weight="600">
+    <Styled.SafeView
+      classes={['pt:3', 'flex:1']}
+      edges={['top']}
+      mode="padding">
+      <Styled.Text
+        classes={[
+          'text:4xl',
+          'color:white',
+          'font-weight:semibold',
+          'ml:4',
+          'pb:4',
+        ]}>
         Settings
-      </Text>
-      <SectionList
+      </Styled.Text>
+      <Styled.SectionList
         sections={DATA}
-        keyExtractor={(item, index) => item + index}
+        stickySectionHeadersEnabled={false}
+        classes={['pt:0']}
+        keyExtractor={(item, index) => `${item}${index}`}
         renderItem={({ item, index, section }) => (
           <Button
-            label={item}
+            label={item as string}
             isFirst={index === 0}
             isLast={index === section.data.length - 1}
             onPress={() => {
@@ -44,8 +54,8 @@ export const Settings: Screen<'Settings'> = () => {
           />
         )}
         contentContainerStyle={contentContainerStyle}
-        renderSectionHeader={() => <Spacer.Vertical size="xl" />}
+        renderSectionHeader={() => <Styled.View classes={['h:8']} />}
       />
-    </Container>
+    </Styled.SafeView>
   );
 };

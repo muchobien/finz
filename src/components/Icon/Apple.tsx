@@ -1,8 +1,7 @@
-import { withTheme } from '@emotion/react';
 import Svg, { Path } from 'react-native-svg';
 import type { InnerIconProps } from './types';
 
-export const Apple = withTheme(({ size = 24, ...props }: InnerIconProps) => (
+export const Apple = ({ size = 24, ...props }: InnerIconProps) => (
   <Svg
     width={size}
     height={(size * 25) / 20}
@@ -14,4 +13,4 @@ export const Apple = withTheme(({ size = 24, ...props }: InnerIconProps) => (
       fill="#000"
     />
   </Svg>
-));
+);

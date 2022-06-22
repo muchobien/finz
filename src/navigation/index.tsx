@@ -8,6 +8,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SheetNavigator } from './sheet';
 import { useColorScheme } from 'react-native';
+import { StyleProvider } from 'react-native-zephyr';
 
 export const Navigation = forwardRef<
   NavigationContainerRef<RootStackParamList>,
@@ -22,10 +23,12 @@ export const Navigation = forwardRef<
 
   return (
     <NavigationContainer ref={ref} onReady={onReady} theme={navigationTheme}>
-      <ThemeProvider theme={theme}>
-        <StatusBar />
-        <SheetNavigator />
-      </ThemeProvider>
+      <StyleProvider>
+        <ThemeProvider theme={theme}>
+          <StatusBar />
+          <SheetNavigator />
+        </ThemeProvider>
+      </StyleProvider>
     </NavigationContainer>
   );
 });
