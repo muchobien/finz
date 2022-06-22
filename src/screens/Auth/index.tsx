@@ -1,13 +1,26 @@
 import type { Screen } from '@app/types';
-import { Button, Text } from '@app/components';
-import { Container } from './styles';
+import { Button, Styled } from '@app/components';
 import { store } from '@app/services';
 
 export const Auth: Screen<'Auth'> = () => (
-  <Container>
-    <Text font="largeTitle" weight="600">
+  <Styled.SafeView
+    classes={['pt:3', 'flex:1']}
+    edges={['top', 'bottom']}
+    mode="padding">
+    <Styled.Text
+      classes={[
+        'text:4xl',
+        'color:white',
+        'font-weight:semibold',
+        'ml:4',
+        'pb:4',
+      ]}>
       Auth
-    </Text>
-    <Button title="Authenticate" onPress={() => store.set('@logged', true)} />
-  </Container>
+    </Styled.Text>
+    <Button
+      title="Authenticate"
+      onPress={() => store.set('@logged', true)}
+      classes={['bg:indigo-800']}
+    />
+  </Styled.SafeView>
 );

@@ -1,67 +1,64 @@
+import type { ComponentProps } from 'react';
 import React, { memo } from 'react';
-import { ActivityIndicator } from 'react-native';
-import type { StyleProp, ViewStyle } from 'react-native';
-import type { StyledProps } from './styles';
-import {
-  pressableDefaultProps,
-  Container,
-  Title,
-  Inner,
-  Pressable,
-  Icon,
-  Decorator,
-  Center,
-} from './styles';
+import { ActivityIndicator, Platform } from 'react-native';
 import type { IconName } from '@app/components/Icon/constants';
+import { Styled } from '@app/components/styled';
+import { Icon } from '@app/components/Icon';
 
 export type ButtonProps = {
-  style?: StyleProp<ViewStyle>;
-  innerStyle?: StyleProp<ViewStyle>;
   title: string;
   onPress?: () => void;
   loading?: boolean;
   enabled?: boolean;
   leftIcon?: IconName;
   rightIcon?: IconName;
-} & Partial<StyledProps>;
+  classes?: ComponentProps<typeof Styled.View>['classes'];
+  innerClasses?: ComponentProps<typeof Styled.View>['classes'];
+};
 
 export const Button = memo<ButtonProps>(
   ({
     title,
-    variant = 'primary',
     loading = false,
     enabled = !loading,
     leftIcon,
     rightIcon,
     onPress,
-    style,
-    innerStyle,
+    classes = [],
+    innerClasses = [],
   }) => (
-    <Container variant={variant} style={style}>
-      <Pressable
+    <Styled.View
+      classes={['overflow:hidden', 'h:12', 'rounded:lg', ...classes]}>
+      <Styled.RectButton
         onPress={onPress}
         enabled={enabled}
-        {...pressableDefaultProps[variant]}>
-        <Inner accessible accessibilityRole="button">
+        classes={['flex:grow']}>
+        <Styled.View
+          accessible
+          accessibilityRole="button"
+          classes={['flex:grow', 'flex:row', 'items:center', ...innerClasses]}>
           {loading ? (
-            <Center style={innerStyle}>
-              <ActivityIndicator />
-            </Center>
+            <Styled.View classes={['flex:1', 'items:center']}>
+              <ActivityIndicator
+                color="rgba(255, 255, 255, 0.7)"
+                size={Platform.select({ android: 'large', default: 'small' })}
+              />
+            </Styled.View>
           ) : (
             <>
-              <Decorator>
-                {leftIcon ? <Icon name={leftIcon} /> : null}
-              </Decorator>
-              <Center style={innerStyle}>
-                <Title>{title}</Title>
-              </Center>
-              <Decorator>
-                {rightIcon ? <Icon name={rightIcon} /> : null}
-              </Decorator>
+              <Styled.View classes={['w:14', 'px:4']}>
+                {leftIcon ? <Icon name={leftIcon} filled /> : null}
+              </Styled.View>
+              <Styled.View classes={['flex:1', 'items:center']}>
+                <Styled.Text>{title}</Styled.Text>
+              </Styled.View>
+              <Styled.View classes={['w:14', 'px:4']}>
+                {rightIcon ? <Icon name={rightIcon} filled /> : null}
+              </Styled.View>
             </>
           )}
-        </Inner>
-      </Pressable>
-    </Container>
+        </Styled.View>
+      </Styled.RectButton>
+    </Styled.View>
   ),
 );

@@ -11,8 +11,6 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@emotion/native": "11.9.3",
-    "@emotion/react": "11.9.3",
     "@expo-google-fonts/inter": "0.2.2",
     "@gorhom/bottom-sheet": "4.3.2",
     "@notifee/react-native": "5.3.0",

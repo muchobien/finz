@@ -12,7 +12,7 @@ export const Tabbar = memo(({ state, navigation }: BottomTabBarProps) => {
       classes={[
         'flex:row',
         'overflow:hidden',
-        'rounded:2xl',
+        'rounded-t:2xl',
         'absolute',
         'bottom:0',
       ]}
