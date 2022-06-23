@@ -24,7 +24,7 @@ export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
   }, [name, navigation]);
 
   const { color } = useMemo<Record<'color', string>>(
-    () => styles('color:gray-400', focused && 'color:indigo-600'),
+    () => styles('color:neutral-400', focused && 'color:emerald-600'),
     [focused],
   );
 
@@ -47,8 +47,8 @@ export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
         classes={[
           'text:sm',
           'mt:0',
-          'color:gray-400',
-          focused && 'color:indigo-600',
+          'color:neutral-400',
+          focused && 'color:emerald-600',
         ]}>
         {name}
       </Styled.Text>

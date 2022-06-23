@@ -13,7 +13,7 @@ export const Button = memo<ButtonProps>(
     <Styled.View
       classes={[
         'overflow:hidden',
-        'bg:gray-900',
+        'bg:zinc-900',
         isFirst && 'rounded-t:xl',
         isLast && 'rounded-b:xl',
       ]}>

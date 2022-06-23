@@ -1,6 +1,6 @@
 import type { Theme as NavigationTheme } from '@react-navigation/native';
 import { useColorScheme, Platform } from 'react-native';
-import { createStyleBuilder } from 'react-native-zephyr';
+import { createStyleBuilder, extractTwColor } from 'react-native-zephyr';
 import { initialWindowMetrics } from 'react-native-safe-area-context';
 import { darkColors, lightColors } from './colors';
 
@@ -48,6 +48,15 @@ export const { styles, useStyles, makeStyledComponent } = createStyleBuilder({
           ? insets.bottom + Platform.select({ ios: 0, default: 16 })
           : 0,
       };
+    },
+  },
+  extendTheme: {
+    colors: {
+      ...extractTwColor({ twColor: 'trueGray', name: 'neutral' }),
+      ...extractTwColor({ twColor: 'gray', name: 'zinc' }),
+      ...extractTwColor({ twColor: 'violet', name: 'violet' }),
+      ...extractTwColor({ twColor: 'emerald', name: 'emerald' }),
+      ...extractTwColor({ twColor: 'rose', name: 'rose' }),
     },
   },
 });
