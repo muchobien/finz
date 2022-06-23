@@ -52,6 +52,8 @@ export const { styles, useStyles, makeStyledComponent } = createStyleBuilder({
   },
   extendTheme: {
     colors: {
+      surface: 'rgb(249, 249, 249)',
+      surfaceDark: 'rgb(1, 1, 1)',
       ...extractTwColor({ twColor: 'trueGray', name: 'neutral' }),
       ...extractTwColor({ twColor: 'gray', name: 'zinc' }),
       ...extractTwColor({ twColor: 'violet', name: 'violet' }),
