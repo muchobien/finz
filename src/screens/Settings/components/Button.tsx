@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Icon, Styled } from '@app/components';
+import { Icon, Styled, styled } from '@app/components';
 
 export type ButtonProps = {
   onPress?: () => void;
@@ -7,6 +7,17 @@ export type ButtonProps = {
   isLast?: boolean;
   label: string;
 };
+
+const Pressable = styled.RectButton('flex:grow');
+const Inner = styled.View(
+  'flex:grow',
+  'flex:row',
+  'items:center',
+  'justify:between',
+  'p:4',
+);
+
+const Label = styled.Text('color:white', 'text:base');
 
 export const Button = memo<ButtonProps>(
   ({ onPress, label, isFirst, isLast }) => (
@@ -17,26 +28,12 @@ export const Button = memo<ButtonProps>(
         isFirst && 'rounded-t:xl',
         isLast && 'rounded-b:xl',
       ]}>
-      <Styled.RectButton
-        classes={['flex:grow']}
-        onPress={onPress}
-        enabled={!!onPress}>
-        <Styled.View
-          accessible
-          accessibilityRole="button"
-          classes={[
-            'flex:grow',
-            'flex:row',
-            'items:center',
-            'justify:between',
-            'p:4',
-          ]}>
-          <Styled.Text classes={['color:white', 'text:base']}>
-            {label}
-          </Styled.Text>
+      <Pressable onPress={onPress} enabled={!!onPress}>
+        <Inner accessible accessibilityRole="button">
+          <Label>{label}</Label>
           {onPress ? <Icon name="chevronRight" /> : null}
-        </Styled.View>
-      </Styled.RectButton>
+        </Inner>
+      </Pressable>
     </Styled.View>
   ),
 );

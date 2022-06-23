@@ -1,7 +1,8 @@
 import type { Screen } from '@app/types';
-import { Styled } from '@app/components';
+import { styled } from '@app/components';
 import { useConnect } from './connect';
 import { Button } from './components';
+import { useCallback } from 'react';
 
 const DATA = [
   {
@@ -21,41 +22,49 @@ const DATA = [
   },
 ];
 
+const Container = styled.SafeView('pt:3', 'flex:1');
+const Title = styled.Text(
+  'text:4xl',
+  'color:white',
+  'font-weight:semibold',
+  'ml:4',
+  'pb:4',
+);
+const Separator = styled.View('h:8');
+const List = styled.SectionList('pt:0');
+
 export const Settings: Screen<'Settings'> = () => {
   const { contentContainerStyle } = useConnect();
+
+  const renderSectionHeader = useCallback(() => <Separator />, []);
+
+  const renderItem = useCallback(
+    ({ item, index, section }) => (
+      <Button
+        label={item as string}
+        isFirst={index === 0}
+        isLast={index === section.data.length - 1}
+        onPress={() => {
+          console.log('Pressed: ' + item);
+        }}
+      />
+    ),
+    [],
+  );
+
+  const keyExtractor = useCallback((item, index) => `${item}${index}`, []);
+
   return (
-    <Styled.SafeView
-      classes={['pt:3', 'flex:1']}
-      edges={['top']}
-      mode="padding">
-      <Styled.Text
-        classes={[
-          'text:4xl',
-          'color:white',
-          'font-weight:semibold',
-          'ml:4',
-          'pb:4',
-        ]}>
-        Settings
-      </Styled.Text>
-      <Styled.SectionList
+    <Container edges={['top']} mode="padding">
+      <Title>Settings</Title>
+      <List
         sections={DATA}
         stickySectionHeadersEnabled={false}
-        classes={['pt:0']}
-        keyExtractor={(item, index) => `${item}${index}`}
-        renderItem={({ item, index, section }) => (
-          <Button
-            label={item as string}
-            isFirst={index === 0}
-            isLast={index === section.data.length - 1}
-            onPress={() => {
-              console.log('Pressed: ' + item);
-            }}
-          />
-        )}
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
         contentContainerStyle={contentContainerStyle}
-        renderSectionHeader={() => <Styled.View classes={['h:8']} />}
+        renderSectionHeader={renderSectionHeader}
       />
-    </Styled.SafeView>
+    </Container>
   );
 };

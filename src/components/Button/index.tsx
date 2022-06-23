@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 import React, { memo } from 'react';
 import { ActivityIndicator, Platform } from 'react-native';
 import type { IconName } from '@app/components/Icon/constants';
-import { Styled } from '@app/components/styled';
+import { Styled, styled } from '@app/components/styled';
 import { Icon } from '@app/components/Icon';
 
 export type ButtonProps = {
@@ -15,6 +15,10 @@ export type ButtonProps = {
   classes?: ComponentProps<typeof Styled.View>['classes'];
   innerClasses?: ComponentProps<typeof Styled.View>['classes'];
 };
+
+const Center = styled.View('flex:1', 'items:center');
+const Decorator = styled.View('w:14', 'px:4');
+const Pressable = styled.RectButton('flex:grow');
 
 export const Button = memo<ButtonProps>(
   ({
@@ -29,36 +33,33 @@ export const Button = memo<ButtonProps>(
   }) => (
     <Styled.View
       classes={['overflow:hidden', 'h:12', 'rounded:lg', ...classes]}>
-      <Styled.RectButton
-        onPress={onPress}
-        enabled={enabled}
-        classes={['flex:grow']}>
+      <Pressable onPress={onPress} enabled={enabled}>
         <Styled.View
           accessible
           accessibilityRole="button"
           classes={['flex:grow', 'flex:row', 'items:center', ...innerClasses]}>
           {loading ? (
-            <Styled.View classes={['flex:1', 'items:center']}>
+            <Center>
               <ActivityIndicator
                 color="rgba(255, 255, 255, 0.7)"
                 size={Platform.select({ android: 'large', default: 'small' })}
               />
-            </Styled.View>
+            </Center>
           ) : (
             <>
-              <Styled.View classes={['w:14', 'px:4']}>
+              <Decorator>
                 {leftIcon ? <Icon name={leftIcon} filled /> : null}
-              </Styled.View>
-              <Styled.View classes={['flex:1', 'items:center']}>
+              </Decorator>
+              <Center>
                 <Styled.Text>{title}</Styled.Text>
-              </Styled.View>
-              <Styled.View classes={['w:14', 'px:4']}>
+              </Center>
+              <Decorator>
                 {rightIcon ? <Icon name={rightIcon} filled /> : null}
-              </Styled.View>
+              </Decorator>
             </>
           )}
         </Styled.View>
-      </Styled.RectButton>
+      </Pressable>
     </Styled.View>
   ),
 );

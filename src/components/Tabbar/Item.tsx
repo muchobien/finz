@@ -1,6 +1,6 @@
 import { Icon } from '@app/components/Icon';
 import type { IconName } from '@app/components/Icon/constants';
-import { Styled } from '@app/components/styled';
+import { Styled, styled } from '@app/components/styled';
 import { styles } from '@app/theme';
 import type { TabScreenName } from '@app/types';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
@@ -18,6 +18,14 @@ const iconMap: Record<TabScreenName, IconName> = {
   Settings: 'gear',
 };
 
+const Pressable = styled.BorderlessButton(
+  'flex:grow',
+  'items:center',
+  'justify:center',
+  'mt:4',
+  'safe:bottom',
+);
+
 export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
   const handlePress = useCallback(() => {
     navigation.navigate(name);
@@ -29,15 +37,7 @@ export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
   );
 
   return (
-    <Styled.BorderlessButton
-      classes={[
-        'flex:grow',
-        'items:center',
-        'justify:center',
-        'mt:4',
-        'safe:bottom',
-      ]}
-      onPress={handlePress}>
+    <Pressable onPress={handlePress}>
       <Icon
         name={iconMap[name as TabScreenName]}
         filled={focused}
@@ -52,6 +52,6 @@ export const Item = memo<ItemProps>(({ name, focused, navigation }) => {
         ]}>
         {name}
       </Styled.Text>
-    </Styled.BorderlessButton>
+    </Pressable>
   );
 });
