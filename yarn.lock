@@ -6779,10 +6779,10 @@ react-native-svg@12.3.0:
     css-select "^4.2.1"
     css-tree "^1.0.0-alpha.39"
 
-react-native-zephyr@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/react-native-zephyr/-/react-native-zephyr-1.0.0.tgz#f131df6ba5cb692d06b6188c6314f476a6827430"
-  integrity sha512-Pb9lgGnu96920iWPVBvIZpdwoZ4htPnks2feorvLWtFVIW40mv9dPWENrdYONcd4CGrAzWV7UIzOBLz8XSx0sA==
+react-native-zephyr@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-zephyr/-/react-native-zephyr-1.1.0.tgz#0d930d8e6c8cbe9c02f101e415b5878b2507a20a"
+  integrity sha512-EZJg3dMIhpMkCYqhosOOgSVIOWAmXhLCYaPpYIA+sXlpIZTFNOvwTy3SXb0hi+eyLTVwd+sa6G0Kpvn5eva5xA==
 
 react-native@0.68.2:
   version "0.68.2"
