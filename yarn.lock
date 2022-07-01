@@ -1908,10 +1908,10 @@
   resolved "https://registry.npmjs.org/@sqltools/formatter/-/formatter-1.2.3.tgz#1185726610acc37317ddab11c3c7f9066966bd20"
   integrity sha512-O3uyB/JbkAEMZaP3YqyHH7TMnex7tWyCbCI4EfJdOCoN6HIhqdJBWTM6aCCiWQ/5f5wxjgU735QAIpJbjDvmzg==
 
-"@th3rdwave/react-navigation-bottom-sheet@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@th3rdwave/react-navigation-bottom-sheet/-/react-navigation-bottom-sheet-0.2.1.tgz#a7fbfb056a91d03178053dc79eb5b47a3300e4a9"
-  integrity sha512-QAYtmYuxVREqE5ozSzWuaYNbABMfJRbrLuJEsIgnlRxzHZaOYvXhkO86Kbm66HHDlLTWRIzEXywkPfHwgIymBw==
+"@th3rdwave/react-navigation-bottom-sheet@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@th3rdwave/react-navigation-bottom-sheet/-/react-navigation-bottom-sheet-0.2.3.tgz#41ee4411cf8d281d93a36739db1a698dca5aa435"
+  integrity sha512-P/cYglK5eTdgdFz+cP+mPVqUp9KOAQC5I6hkoX3TLrzu8qWJ78NBk6Vl6pIJZ9M2YEAAr/fvYYf4fEGDZEawPw==
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
