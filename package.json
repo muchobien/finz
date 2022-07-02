@@ -41,7 +41,7 @@
     "react-native-screens": "3.14.0",
     "react-native-svg": "12.3.0",
     "react-native-zephyr": "1.1.0",
-    "typeorm": "0.3.6"
+    "typeorm": "0.3.7"
   },
   "devDependencies": {
     "@babel/core": "7.18.6",
