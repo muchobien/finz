@@ -3,6 +3,7 @@ import { View, Text, ScrollView, SectionList } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BlurView } from 'expo-blur';
+import { FlashList } from '@shopify/flash-list';
 
 export const Styled = {
   BlurView: makeStyledComponent(BlurView),
@@ -22,6 +23,7 @@ export const styled = {
   SafeView: styledZephyr(SafeAreaView),
   ScrollView: styledZephyr(ScrollView),
   SectionList: styledZephyr(SectionList),
+  FlashList,
   Text: styledZephyr(Text),
   View: styledZephyr(View),
 };

@@ -5,21 +5,23 @@ import { Button } from './components';
 import { useCallback } from 'react';
 
 const DATA = [
-  {
-    data: ['Pizza', 'Burger', 'Risotto'],
-  },
-  {
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-  },
-  {
-    data: ['Water', 'Coke', 'Beer'],
-  },
-  {
-    data: ['Cheese Cake', 'Ice Cream'],
-  },
-  {
-    data: ['Coffee'],
-  },
+  'Pizza',
+  'Burger',
+  'Risotto',
+  null,
+  'French Fries',
+  'Onion Rings',
+  'Fried Shrimps',
+  null,
+  'Water',
+  'Coke',
+  'Beer',
+  null,
+  'Cheese Cake',
+  'Ice Cream',
+  null,
+  'Coffee',
+  null,
 ];
 
 const Container = styled.SafeView('pt:3', 'flex:1');
@@ -31,39 +33,42 @@ const Title = styled.Text(
   'pb:4',
 );
 const Separator = styled.View('h:8');
-const List = styled.SectionList('pt:0');
+const List = styled.FlashList;
 
 export const Settings: Screen<'Settings'> = () => {
   const { contentContainerStyle } = useConnect();
 
-  const renderSectionHeader = useCallback(() => <Separator />, []);
-
   const renderItem = useCallback(
-    ({ item, index, section }) => (
-      <Button
-        label={item as string}
-        isFirst={index === 0}
-        isLast={index === section.data.length - 1}
-        onPress={() => {
-          console.log('Pressed: ' + item);
-        }}
-      />
-    ),
+    ({ item, index }) =>
+      item === null ? (
+        <Separator />
+      ) : (
+        <Button
+          label={item as string}
+          isFirst={index === 0 || DATA[index - 1] === null}
+          isLast={DATA[index + 1] === null}
+          onPress={() => {
+            console.log('Pressed: ' + item);
+          }}
+        />
+      ),
     [],
   );
 
-  const keyExtractor = useCallback((item, index) => `${item}${index}`, []);
+  const getItemType = useCallback(
+    item => (item === null ? 'separator' : 'item'),
+    [],
+  );
 
   return (
     <Container edges={['top']} mode="padding">
       <Title>Settings</Title>
       <List
-        sections={DATA}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={keyExtractor}
+        data={DATA}
         renderItem={renderItem}
+        getItemType={getItemType}
         contentContainerStyle={contentContainerStyle}
-        renderSectionHeader={renderSectionHeader}
+        estimatedItemSize={56}
       />
     </Container>
   );

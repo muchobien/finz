@@ -25,6 +25,7 @@ export const Button = memo<ButtonProps>(
       classes={[
         'overflow:hidden',
         'bg:zinc-900',
+        'mx:4',
         isFirst && 'rounded-t:xl',
         isLast && 'rounded-b:xl',
       ]}>
