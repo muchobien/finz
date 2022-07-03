@@ -17,6 +17,7 @@
     "@react-navigation/bottom-tabs": "6.3.1",
     "@react-navigation/native": "6.0.10",
     "@react-navigation/native-stack": "6.6.2",
+    "@shopify/flash-list": "1.0.4",
     "@th3rdwave/react-navigation-bottom-sheet": "0.2.3",
     "expo": "45.0.6",
     "expo-application": "4.1.0",
@@ -41,7 +42,7 @@
     "react-native-screens": "3.14.0",
     "react-native-svg": "12.3.0",
     "react-native-zephyr": "1.1.0",
-    "typeorm": "0.3.6"
+    "typeorm": "0.3.7"
   },
   "devDependencies": {
     "@babel/core": "7.18.6",
