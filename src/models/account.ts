@@ -4,11 +4,12 @@ import {
   Column,
   OneToMany,
   type Relation,
+  BaseEntity,
 } from 'typeorm';
-import { Transaction } from './transaction';
+import type { Transaction } from './transaction';
 
 @Entity()
-export class Account {
+export class Account extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
@@ -18,6 +19,12 @@ export class Account {
   @Column()
   color!: string;
 
-  @OneToMany(() => Transaction, transaction => transaction.account)
+  @OneToMany<Transaction>('Transaction', transaction => transaction.account)
   transactions!: Relation<Transaction[]>;
+
+  static new(fields: Pick<Account, 'name' | 'color'>): Account {
+    const account = new Account();
+    Object.assign(account, fields);
+    return account;
+  }
 }

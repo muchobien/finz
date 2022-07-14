@@ -13,6 +13,7 @@ import {
   Inter_900Black,
 } from '@expo-google-fonts/inter';
 import { datasource } from '@app/services';
+import { Account, Category, Transaction } from '@app/models';
 
 export const useApp = () => {
   const [ready, setReady] = useState(false);
@@ -39,6 +40,27 @@ export const useApp = () => {
       });
       if (!datasource.isInitialized) {
         await datasource.initialize();
+        const category = Category.new({
+          name: 'Category',
+          color: '#000000',
+        });
+        await category.save();
+
+        const account = Account.new({
+          name: 'Account',
+          color: '#000000',
+        });
+
+        await account.save();
+
+        const transaction = Transaction.new({
+          name: 'Transaction',
+          amount: 12.23,
+          account,
+          category,
+        });
+
+        await transaction.save();
       }
     } catch (err) {
       console.log(err);
