@@ -48,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "7.18.9",
     "@babel/plugin-proposal-decorators": "7.18.9",
-    "@babel/runtime": "7.18.6",
+    "@babel/runtime": "7.18.9",
     "@muchobien/eslint-config-react-native": "0.1.8",
     "@types/react": "17.0.45",
     "@types/react-native": "0.68.0",
