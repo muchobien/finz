@@ -4108,12 +4108,12 @@ expo-status-bar@1.3.0:
   resolved "https://registry.npmjs.org/expo-status-bar/-/expo-status-bar-1.3.0.tgz#d71fd0b880ea201905f5dd8abcd18db7476c9f03"
   integrity sha512-UszYUsT8A8jSUebrXht095Iwv5VIdg61LPuyNNoC5gFP0E9G+8LgX68deqR4zhJOlbsgSH2cixxKhrGW+1HPZg==
 
-expo-system-ui@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/expo-system-ui/-/expo-system-ui-1.2.0.tgz#dd8a80f11420cfc65ae25b7ce6de6b60a7aa5b0e"
-  integrity sha512-jynjFNz38FeY/2u4EKvLJdIk0hZAhicd9lbjSRJUDTjhGhQmYDsCQ32NKp/X3DwBkugAP5nwDwa5S3eGk5i80Q==
+expo-system-ui@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/expo-system-ui/-/expo-system-ui-1.3.0.tgz#4fcd6ddbb0a2ab95dd662fc5439cf5587227953d"
+  integrity sha512-LQyG4rkZfZsYN3FSneWuNDVoZZ93TvN5byvLLTgJ8x90Lcuf7f7R5NHF6b2eq9IqTVkZedmHnmKO1TBV2fLg/A==
   dependencies:
-    "@expo/config-plugins" "^4.0.14"
+    "@expo/config-plugins" "~5.0.0"
     "@react-native/normalize-color" "^2.0.0"
     debug "^4.3.2"
 
@@ -6994,10 +6994,10 @@ react-native-zephyr@1.1.0:
   resolved "https://registry.yarnpkg.com/react-native-zephyr/-/react-native-zephyr-1.1.0.tgz#0d930d8e6c8cbe9c02f101e415b5878b2507a20a"
   integrity sha512-EZJg3dMIhpMkCYqhosOOgSVIOWAmXhLCYaPpYIA+sXlpIZTFNOvwTy3SXb0hi+eyLTVwd+sa6G0Kpvn5eva5xA==
 
-react-native@0.68.2:
-  version "0.68.2"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz#07547cd31bb9335a7fa4135cfbdc24e067142585"
-  integrity sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw==
+react-native@0.68.3:
+  version "0.68.3"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.68.3.tgz#07ac7374acde9bc5e80f9e473e03d6b730528f1c"
+  integrity sha512-LPgLQ4e96NWCrJPKlXzKfvlg1ddhfUplsEg00/cfBIMFZPJn2inzo9Rym8I/JYjmRORe4GjGY8kOem72hPm0Lw==
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
     "@react-native-community/cli" "^7.0.3"
