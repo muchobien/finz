@@ -51,7 +51,7 @@
     "@babel/runtime": "7.18.9",
     "@muchobien/eslint-config-react-native": "0.1.8",
     "@types/react": "18.0.17",
-    "@types/react-native": "0.69.5",
+    "@types/react-native": "0.69.6",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-plugin-transform-typescript-metadata": "0.3.2",
     "eslint": "8.23.0",
