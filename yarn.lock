@@ -2014,10 +2014,10 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@shopify/flash-list@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@shopify/flash-list/-/flash-list-1.2.1.tgz#013348b1a1d1feb3302d2d322650e2729e7668dd"
-  integrity sha512-32N3CD+eJErgdEtyM8YP4iocvMJoOMeFbLnFE65Hpc+/CFz6rKbdN1zB5u6DXrE30WYKfKdTwhw0iTJje98dPA==
+"@shopify/flash-list@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@shopify/flash-list/-/flash-list-1.2.2.tgz#4c4e98745303b918c2c25ce1a4711d225a022326"
+  integrity sha512-hgGuvHDXdrgJRZFfL6pgVia/8NkFIYxucnjOEBFa+K0NRgzoESK3QdW++kbJhdeiVKAyROgWjygIOR3YsfrHxA==
   dependencies:
     recyclerlistview "4.1.2"
     tslib "2.4.0"
