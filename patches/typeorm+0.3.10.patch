@@ -1,5 +1,5 @@
 diff --git a/node_modules/typeorm/browser/driver/react-native/ReactNativeConnectionOptions.d.ts b/node_modules/typeorm/browser/driver/react-native/ReactNativeConnectionOptions.d.ts
-index bc9d913..e87d5c3 100644
+index 8004ebe..5df3337 100644
 --- a/node_modules/typeorm/browser/driver/react-native/ReactNativeConnectionOptions.d.ts
 +++ b/node_modules/typeorm/browser/driver/react-native/ReactNativeConnectionOptions.d.ts
 @@ -13,7 +13,7 @@ export interface ReactNativeConnectionOptions extends BaseDataSourceOptions {
@@ -67,7 +67,7 @@ index f0e731b..a2fbb9f 100644
          }
          catch (err) {
 diff --git a/node_modules/typeorm/driver/react-native/ReactNativeConnectionOptions.d.ts b/node_modules/typeorm/driver/react-native/ReactNativeConnectionOptions.d.ts
-index bc9d913..e87d5c3 100644
+index 8004ebe..5df3337 100644
 --- a/node_modules/typeorm/driver/react-native/ReactNativeConnectionOptions.d.ts
 +++ b/node_modules/typeorm/driver/react-native/ReactNativeConnectionOptions.d.ts
 @@ -13,7 +13,7 @@ export interface ReactNativeConnectionOptions extends BaseDataSourceOptions {
