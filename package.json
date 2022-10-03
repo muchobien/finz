@@ -19,7 +19,7 @@
     "@react-navigation/native-stack": "6.9.0",
     "@shopify/flash-list": "1.2.2",
     "@th3rdwave/react-navigation-bottom-sheet": "0.2.3",
-    "expo": "46.0.10",
+    "expo": "46.0.14",
     "expo-application": "4.2.2",
     "expo-blur": "11.2.0",
     "expo-dev-client": "1.2.1",
