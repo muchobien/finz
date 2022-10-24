@@ -6945,10 +6945,10 @@ react-native-primitives@0.1.3:
   resolved "https://registry.npmjs.org/react-native-primitives/-/react-native-primitives-0.1.3.tgz#ff9548adfcaacb2f2b6a34a078d2643903e17e3d"
   integrity sha512-slhBFw6vKsq76f4G4N4cXL/g3UPq22Fgl2atmSxgGJZs5JK5SPTNbP4AvIcnt72Selj0k9/5fAMFvpUq8qsVbQ==
 
-react-native-quick-sqlite@4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/react-native-quick-sqlite/-/react-native-quick-sqlite-4.0.7.tgz#f6edd935eb368b9ebcb4449ed43fb3054e047616"
-  integrity sha512-xzASTSMe9sfuLaAafr170+bD4xDl6KXtoE5n7AtiKry2qUTBn6vZCgx0ToHzqfw1P4Se9ptCT2xvnaTsuRfGgQ==
+react-native-quick-sqlite@5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-quick-sqlite/-/react-native-quick-sqlite-5.0.3.tgz#52397e1f9d60b87fe6efb7048e43c81448d1b3aa"
+  integrity sha512-xaVPpVwFw0IB4+Tw63MhZJtUNr+CEF68grg2TWQMKK71oNjBffnL5uMMmVEmOgLKe6Wxto0JOPx/aWcgOeK9bQ==
 
 react-native-reanimated@2.11.0:
   version "2.11.0"
